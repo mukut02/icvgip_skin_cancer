@@ -220,10 +220,11 @@ The following metrics quantitatively assess geometric cluster quality on the hyp
 
 | Method Configuration | ISIC 2018 Overall Acc (%) | ISIC 2018 Bal Acc (%) | ISIC 2018 Macro F1 (%) | ISIC 2019 Overall Acc (%) | ISIC 2019 Bal Acc (%) | ISIC 2019 Macro F1 (%) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| $\mathcal{L}_{\text{WCE}}$ | $81.22 \pm 1.56$ | $75.44 \pm 1.72$ | $73.91 \pm 1.81$ | $77.10 \pm 1.61$ | $66.74 \pm 1.56$ | $65.61 \pm 1.63$ |
-| $\mathcal{L}_{\text{WCE}} + \mathcal{L}_{\text{knn}}$ | $84.50 \pm 1.77$ | $77.39 \pm 1.89$ | $76.32 \pm 1.91$ | $79.87 \pm 1.79$ | $70.35 \pm 1.81$ | $69.73 \pm 1.83$ |
-| $\mathcal{L}_{\text{WCE}} + \mathcal{L}_{\text{proto}}$ | $86.19 \pm 1.63$ | $78.43 \pm 1.72$ | $76.59 \pm 1.87$ | $81.52 \pm 1.71$ | $70.91 \pm 1.68$ | $70.74 \pm 1.73$ |
-| **$\mathcal{L}_{\text{WCE}} + \mathcal{L}_{\text{knn}} + \mathcal{L}_{\text{proto}}$** | **$87.41 \pm 2.03$** | **$79.32 \pm 1.87$** | **$77.89 \pm 1.91$** | **$82.78 \pm 1.97$** | **$71.97 \pm 1.93$** | **$72.40 \pm 1.91$** |
+| Weighted CE (WCE) | $81.22 \pm 1.56$ | $75.44 \pm 1.72$ | $73.91 \pm 1.81$ | $77.10 \pm 1.61$ | $66.74 \pm 1.56$ | $65.61 \pm 1.63$ |
+| WCE + KNN | $84.50 \pm 1.77$ | $77.39 \pm 1.89$ | $76.32 \pm 1.91$ | $79.87 \pm 1.79$ | $70.35 \pm 1.81$ | $69.73 \pm 1.83$ |
+| WCE + Proto | $86.19 \pm 1.63$ | $78.43 \pm 1.72$ | $76.59 \pm 1.87$ | $81.52 \pm 1.71$ | $70.91 \pm 1.68$ | $70.74 \pm 1.73$ |
+| **WCE + KNN + Proto (Proposed)** | **$87.41 \pm 2.03$** | **$79.32 \pm 1.87$** | **$77.89 \pm 1.91$** | **$82.78 \pm 1.97$** | **$71.97 \pm 1.93$** | **$72.40 \pm 1.91$** |
+
 
 ---
 
