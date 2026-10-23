@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?style=flat&logo=pytorch" alt="PyTorch"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB.svg?style=flat&logo=python" alt="Python"></a>
-  <a href="https://icvgip2026.org/"><img src="https://img.shields.io/badge/ICVGIP-2026-blue.svg?style=flat" alt="ICVGIP 2026"></a>
+  <a href="https://icvgip.in/2026/#/"><img src="https://img.shields.io/badge/ICVGIP-2026-blue.svg?style=flat" alt="ICVGIP 2026"></a>
   <a href="https://dl.acm.org/"><img src="https://img.shields.io/badge/ACM-Conference%20Proceedings-00758F.svg?style=flat" alt="ACM"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat" alt="License"></a>
 </p>
