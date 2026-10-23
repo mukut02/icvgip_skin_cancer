@@ -101,7 +101,7 @@ where $k = 10$, margin $m = 0.2$, and $w_{y_i}$ applies class-balanced weighting
 #### 5. Cauchy Prototype Separation Loss ($\mathcal{L}_{\text{proto}}$)
 Prototypes are calculated as joint centroids combining current batch instances and detached queue entries:
 
-$$v_c = \sum_{i \in \mathcal{B}_c} \tilde{z}_i + \sum_{j \in \mathcal{Q}_c} \operatorname{sg}(q_j), \qquad \mu_c = \frac{v_c}{\|v_c\|_2 + \epsilon}$$
+$$v_c = \sum_{i \in \mathcal{B}_c} \tilde{z}_i + \sum_{j \in \mathcal{Q}_c} \text{sg}(q_j), \qquad \mu_c = \frac{v_c}{\|v_c\|_2 + \epsilon}$$
 
 Pairwise prototype similarity is evaluated using a heavy-tailed Cauchy kernel with bandwidth $\sigma = 0.5$:
 
@@ -118,14 +118,13 @@ $$\lambda(t) = \lambda_{\max} \cdot \frac{1 - e^{-t/\tau}}{1 - e^{-T/\tau}}$$
 
 ### Gradient Flow and Differentiability
 
-Although queue embeddings $\mathcal{Q}_c$ are treated as detached historical records ($\operatorname{sg}(q_j)$) updated after parameter optimization, active mini-batch embeddings $\tilde{z}_i(\theta) \in \mathcal{B}_c$ maintain complete autograd connections to the encoder.
+Although queue embeddings $\mathcal{Q}_c$ are treated as detached historical records ($\text{sg}(q_j)$) updated after parameter optimization, active mini-batch embeddings $\tilde{z}_i(\theta) \in \mathcal{B}_c$ maintain complete autograd connections to the encoder.
 
 Differentiating the prototype separation loss with respect to a batch embedding $\tilde{z}_i$ yields:
 
 $$\frac{\partial \mathcal{L}_{\text{proto}}}{\partial \tilde{z}_i} \propto \frac{(\mathbf{I} - \mu_r \mu_r^\top)(\mu_r - \mu_s)}{\|v_r\|_2} \neq \mathbf{0}$$
 
 This formulation guarantees consistent, non-zero gradient backpropagation throughout training, avoiding gradient detachment while leveraging queue stability.
-
 ---
 
 ## Representation Analysis (t-SNE)
