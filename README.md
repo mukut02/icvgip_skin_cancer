@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?style=flat&logo=pytorch" alt="PyTorch"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB.svg?style=flat&logo=python" alt="Python"></a>
-  <a href="https://icvgip.in/2026/#/"><img src="https://img.shields.io/badge/ICVGIP-2026-blue.svg?style=flat" alt="ICVGIP 2026"></a>
+  <a href="https://icvgip2026.org/"><img src="https://img.shields.io/badge/ICVGIP-2026-blue.svg?style=flat" alt="ICVGIP 2026"></a>
   <a href="https://dl.acm.org/"><img src="https://img.shields.io/badge/ACM-Conference%20Proceedings-00758F.svg?style=flat" alt="ACM"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat" alt="License"></a>
 </p>
@@ -125,6 +125,7 @@ Differentiating the prototype separation loss with respect to a batch embedding 
 $$\frac{\partial \mathcal{L}_{\text{proto}}}{\partial \tilde{z}_i} \propto \frac{(\mathbf{I} - \mu_r \mu_r^\top)(\mu_r - \mu_s)}{\|v_r\|_2} \neq \mathbf{0}$$
 
 This formulation guarantees consistent, non-zero gradient backpropagation throughout training, avoiding gradient detachment while leveraging queue stability.
+
 ---
 
 ## Representation Analysis (t-SNE)
@@ -225,7 +226,6 @@ The following metrics quantitatively assess geometric cluster quality on the hyp
 | WCE + Proto | $86.19 \pm 1.63$ | $78.43 \pm 1.72$ | $76.59 \pm 1.87$ | $81.52 \pm 1.71$ | $70.91 \pm 1.68$ | $70.74 \pm 1.73$ |
 | **WCE + KNN + Proto (Proposed)** | **$87.41 \pm 2.03$** | **$79.32 \pm 1.87$** | **$77.89 \pm 1.91$** | **$82.78 \pm 1.97$** | **$71.97 \pm 1.93$** | **$72.40 \pm 1.91$** |
 
-
 ---
 
 ### 5. Prototype Separation Kernel Analysis
@@ -255,6 +255,49 @@ Evaluated on the ISIC 2019 validation set:
 
 ---
 
+## Repository Structure
+
+```plaintext
+icvgip_skin_cancer/
+├── assets/
+│   ├── model_workflow.png        # Figure 1: Model workflow diagram
+│   ├── tsne_ablation.png         # Figure 2: Component-wise ablation t-SNE
+│   └── tsne_comparison.png       # Figure 3: Baseline comparison t-SNE
+├── data/
+│   ├── isic2018/                 # ISIC 2018 dermoscopic images and metadata
+│   └── isic2019/                 # ISIC 2019 dermoscopic images and metadata
+├── models/
+│   ├── backbone.py               # Pretrained ResNet-18 backbone and projection head
+│   └── queue.py                  # EMA memory queue module
+├── losses/
+│   ├── wce_loss.py               # Effective-number weighted cross-entropy
+│   ├── knn_loss.py               # TailAwareMarginKNNLoss implementation
+│   └── proto_loss.py             # CauchyPrototypeLoss implementation
+├── icvgip_code.ipynb             # Clean interactive training and diagnostics notebook
+├── requirements.txt              # Environment dependencies
+└── README.md                     # Project documentation
+```
+
+---
+
+## Environment Setup
+
+### Prerequisites
+- Python 3.8 or newer
+- PyTorch 2.0 or newer with CUDA support
+
+### Installation
+Using Conda:
+```bash
+conda create -n skin_cancer python=3.10 -y
+conda activate skin_cancer
+pip install -r requirements.txt
+```
+
+Alternatively, install dependencies directly via pip:
+```bash
+pip install torch torchvision timm scikit-learn pandas numpy matplotlib seaborn opencv-python tqdm
+```
 
 ---
 
