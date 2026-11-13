@@ -1,4 +1,4 @@
-#402 : Local Compactness and Global Repulsion: A Memory-Queue Framework for Imbalanced Skin Lesion Classification
+# Local Compactness and Global Repulsion: A Memory-Queue Framework for Imbalanced Skin Lesion Classification
 
 <p align="center">
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?style=flat&logo=pytorch" alt="PyTorch"></a>
@@ -8,7 +8,7 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat" alt="License"></a>
 </p>
 
-Official repository for the paper **"Local Compactness and Global Repulsion: A Memory-Queue Framework for Imbalanced Skin Lesion Classification"**, accepted in the *Proceedings of the 17th Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP 2026)*, ACM.
+Official repository for the paper **"Local Compactness and Global Repulsion: A Memory-Queue Framework for Imbalanced Skin Lesion Classification"**, accepted in the *Proceedings of the 17th Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP 2026), Paper ID : 402*, ACM.
 
 ---
 
