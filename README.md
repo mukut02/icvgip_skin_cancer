@@ -1,4 +1,4 @@
-# Local Compactness and Global Repulsion: A Memory-Queue Framework for Imbalanced Skin Lesion Classification
+#402 : Local Compactness and Global Repulsion: A Memory-Queue Framework for Imbalanced Skin Lesion Classification
 
 <p align="center">
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?style=flat&logo=pytorch" alt="PyTorch"></a>
